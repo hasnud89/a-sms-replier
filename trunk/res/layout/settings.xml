@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical"
+>
+	<ScrollView
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+	>
+		<LinearLayout
+		    android:orientation="vertical"
+		   	android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+		>
+			<LinearLayout
+			    android:orientation="horizontal"
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+				android:layout_margin="5px"
+			>
+		         <LinearLayout
+			    	android:orientation="vertical"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			    >
+			        <TextView
+			            android:layout_width="fill_parent"
+			            android:layout_height="wrap_content"
+			            android:textColor="#FFFFFF"
+			            android:textSize="22px"
+			            android:text="@string/start_listening_title"
+			        />
+			    </LinearLayout>
+	    
+				<LinearLayout
+			    	android:orientation="vertical"
+			        android:layout_width="fill_parent"
+			        android:layout_height="wrap_content"
+			    >
+				    <CheckBox android:id="@+id/cb_settings_start_listening"
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:layout_gravity="right"
+				    />
+			    </LinearLayout>
+			</LinearLayout>
+			
+			<LinearLayout
+				android:layout_width="fill_parent"
+				android:layout_height="1px"
+				android:layout_marginTop="5px"
+				android:layout_marginBottom="5px"
+				android:background="#808080"
+			/>
+			
+			<LinearLayout android:id="@+id/settings_ll_auto_words"
+			    android:orientation="horizontal"
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:layout_marginTop="5px"
+			    android:layout_marginBottom="5px"
+			>
+			    <LinearLayout
+			    	android:orientation="vertical"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_marginLeft="5px"
+			    >
+			        <TextView
+			            android:layout_width="fill_parent"
+			            android:layout_height="wrap_content"
+			            android:textColor="#FFFFFF"
+			            android:textSize="22px"
+			            android:text="@string/auto_words_hint"
+			        />
+			        <TextView
+			            android:layout_width="fill_parent"
+			            android:layout_height="wrap_content"
+			            android:textColor="#FFFFFF"
+			            android:textSize="13px"
+			            android:text="" 
+			        />
+			        <TextView android:id="@+id/auto_words_content"
+			            android:layout_width="fill_parent"
+			            android:layout_height="wrap_content"
+			            android:layout_marginTop="5px"
+			            android:textColor="#FFFFFF"
+			            android:textSize="13px"
+			            android:textStyle="italic"
+			            android:text="" 
+			        />
+			    </LinearLayout>
+	    
+				<LinearLayout
+			    	android:orientation="vertical"
+			        android:layout_width="fill_parent"
+			        android:layout_height="wrap_content"
+			    >
+			    </LinearLayout>
+			</LinearLayout>
+			
+			<LinearLayout
+				android:layout_width="fill_parent"
+				android:layout_height="1px"
+				android:layout_marginTop="5px"
+				android:layout_marginBottom="5px"
+				android:background="#808080"
+			/>
+			
+			<LinearLayout android:id="@+id/settings_ll_time_interval"
+			    android:orientation="horizontal"
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:layout_marginTop="5px"
+			    android:layout_marginBottom="5px"
+			>
+			    <LinearLayout
+			    	android:orientation="vertical"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_marginLeft="5px"
+			    >
+			        <TextView
+			            android:layout_width="fill_parent"
+			            android:layout_height="wrap_content"
+			            android:textColor="#FFFFFF"
+			            android:textSize="22px"
+			            android:text="@string/time_interval_hint"
+			        />
+			        <TextView
+			            android:layout_width="fill_parent"
+			            android:layout_height="wrap_content"
+			            android:textColor="#FFFFFF"
+			            android:textSize="13px"
+			            android:text="" 
+			        />
+			        <TextView android:id="@+id/time_interval_content"
+			            android:layout_width="fill_parent"
+			            android:layout_height="wrap_content"
+			            android:layout_marginTop="5px"
+			            android:textColor="#FFFFFF"
+			            android:textSize="13px"
+			            android:textStyle="italic"
+			            android:text="" 
+			        />
+			    </LinearLayout>
+	    
+				<LinearLayout
+			    	android:orientation="vertical"
+			        android:layout_width="fill_parent"
+			        android:layout_height="wrap_content"
+			    >
+			    </LinearLayout>
+			</LinearLayout>
+			
+			<LinearLayout
+				android:layout_width="fill_parent"
+				android:layout_height="1px"
+				android:layout_marginTop="5px"
+				android:layout_marginBottom="5px"
+				android:background="#808080"
+			/>
+		</LinearLayout>
+	</ScrollView>
+</LinearLayout>
+

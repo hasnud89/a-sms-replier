@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+    <TextView android:id="@+id/tv_no_reply"
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:text="@string/no_to_reply_content"
+    	android:visibility="visible"
+    	android:textSize="18px"
+    	android:gravity="center">
+    </TextView>
+	
+	<ListView android:id="@+id/listview_to_reply"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:drawSelectorOnTop="false" android:background="#000000"
+			android:persistentDrawingCache="animation|scrolling">
+	</ListView>
+</LinearLayout>

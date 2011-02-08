@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!-- Schemas -->
+    <string name="db_name">contactRecord.db</string>
+    <string name="db_version">3</string>
+    <string name="db_table_name_contact_info">tbContacts</string>
+    <string name="create_contacts">
+    	CREATE TABLE tbContacts(
+    		contactId INTEGER,
+    		contactName TEXT, 
+    		contactNumber TEXT, 
+    		shouldReply INTEGER NOT NULL, 
+    		PRIMARY KEY (contactId, contactNumber)
+    	)
+    </string>
+    <string name="drop_contacts">
+    	DROP TABLE IF EXISTS tbContacts
+    </string>
+    
+    <!-- Operations 
+    <string name="insert_contact_id">
+		"INSERT INTO tbContacts (contactID, phoneNumber, shouldReply) VALUES ('%1$s', '%2$s', '0')"
+	</string>
+	<string name="remove_contact_id">
+		"DELETE FROM tbContacts WHERE contactID='%1$s' AND phoneNumber LIKE '%%%2$s'"
+	</string>
+	<string name="update_contact_id">
+		"UPDATE tbContacts SET shouldReply='%3$s' WHERE contactID='%1$s' AND phoneNumber LIKE '%%%2$s'"
+	</string>
+	<string name="query_should_reply">
+		"SELECT shouldReply FROM tbContacts WHERE contactID='%1$s' AND phoneNumber LIKE '%%%2$s'"
+	</string>
+	<string name="query_all_ids">
+		"SELECT contactID, phoneNumber FROM tbContacts"
+	</string>
+	
+	-->
+</resources>

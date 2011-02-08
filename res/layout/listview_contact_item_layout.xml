@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:descendantFocusability="blocksDescendants"
+    android:paddingBottom="5px"
+>
+	<LinearLayout
+		android:orientation="horizontal"
+    	android:layout_width="fill_parent"
+    	android:layout_height="fill_parent"
+    	android:descendantFocusability="blocksDescendants"
+    >
+	    <LinearLayout
+	    	android:paddingLeft="5px"
+	    	android:orientation="vertical"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	    >
+	        <TextView android:id="@+id/tvContactName"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:textColor="#FFFFFF"
+	            android:textSize="22px"
+	        />
+
+	        <TextView android:id="@+id/tvContactNumber"
+	        	android:paddingLeft="5px"
+	            android:paddingTop="5px"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:textColor="#FFFFFF"
+	            android:textSize="15px"
+	        />
+	    </LinearLayout>
+	    
+		<LinearLayout
+	    	android:orientation="vertical"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	    >
+		    <CheckBox android:id="@+id/cbIsChecked"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_gravity="right"
+		    />
+	    </LinearLayout>
+	 </LinearLayout>
+</LinearLayout>

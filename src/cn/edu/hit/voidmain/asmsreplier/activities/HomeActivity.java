@@ -51,6 +51,7 @@ public class HomeActivity extends TabActivity {
 			dialog.show();  
         	manager.setFirstTimeLaunch(false); // not the first time!
         }
+
     }
     
     private void setTabView(){

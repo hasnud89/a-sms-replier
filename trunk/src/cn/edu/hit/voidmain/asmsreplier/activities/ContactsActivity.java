@@ -49,6 +49,7 @@ public class ContactsActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.contacts);
+		
 		contactListView = (ListView)findViewById(R.id.listview_contacts);
 		
 		// loads the contact information

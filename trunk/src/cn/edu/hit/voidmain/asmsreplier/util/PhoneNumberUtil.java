@@ -16,4 +16,9 @@ public class PhoneNumberUtil {
 		
 		return number;
 	}
+	
+	public static String removeDashes(String oldNumber)
+	{
+		return oldNumber.replace("-", "");
+	}
 }

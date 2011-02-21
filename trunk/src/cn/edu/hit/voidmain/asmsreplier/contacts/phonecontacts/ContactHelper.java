@@ -10,6 +10,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.provider.ContactsContract;
 import cn.edu.hit.voidmain.asmsreplier.contacts.phonecontacts.entity.ContactInfo;
+import cn.edu.hit.voidmain.asmsreplier.util.PhoneNumberUtil;
 
 /**
  * ContactHelper
@@ -128,6 +129,7 @@ public class ContactHelper {
 							ContactInfo info = new ContactInfo();
 							info.setContactID(Integer.valueOf(contactId));
 							info.setContactName(contactName.trim());
+							number = PhoneNumberUtil.removeDashes(number);
 							info.setNumber(number.trim());
 							contactInfo.add(info);
 						}

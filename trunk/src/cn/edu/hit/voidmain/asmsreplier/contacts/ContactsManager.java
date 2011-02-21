@@ -138,4 +138,19 @@ public class ContactsManager {
 		
 		cur.close();
 	}
+	
+	public void checkContact(String id, String contactName, String contactNumber)
+	{
+		ContentValues values = new ContentValues();
+		values.put(ContactInfoTableMetaData.SHOULD_REPLY, 1);
+		
+		context.getContentResolver().update(ContactInfoTableMetaData.CONTENT_URI, 
+				values, 
+				"contactId=? AND contactName=? AND contactNumber=?", 
+				new String[]{
+				id,
+				contactName, 
+				contactNumber
+		});
+	}
 }

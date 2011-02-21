@@ -45,15 +45,15 @@ public final class R {
         public static final int to_reply=0x7f030006;
     }
     public static final class string {
-        public static final int add_postfix_title=0x7f07001e;
-        public static final int alert_content_title=0x7f070023;
+        public static final int add_postfix_title=0x7f070020;
+        public static final int alert_content_title=0x7f070025;
         public static final int app_name=0x7f070005;
         /**  Added in the end of the message auto-replied, as an ad! 
  在自动发送的短信之后添加上，无法在应用程序中修改，打广告专用~ 
          */
-        public static final int auto_reply_postfix=0x7f070015;
-        public static final int auto_words=0x7f07001f;
-        public static final int auto_words_hint=0x7f070021;
+        public static final int auto_reply_postfix=0x7f070017;
+        public static final int auto_words=0x7f070021;
+        public static final int auto_words_hint=0x7f070023;
         public static final int create_contacts=0x7f070003;
         /**  Schemas 
          */
@@ -63,83 +63,82 @@ public final class R {
         /**  default values 
  默认自动回复内容 
          */
-        public static final int default_auto_reply_content=0x7f070016;
-        public static final int default_auto_reply_interval=0x7f070017;
-        public static final int default_is_frist_time=0x7f070018;
-        public static final int default_should_add_postfix=0x7f070019;
+        public static final int default_auto_reply_content=0x7f070018;
+        public static final int default_auto_reply_interval=0x7f070019;
+        public static final int default_is_frist_time=0x7f07001a;
+        public static final int default_should_add_postfix=0x7f07001b;
         public static final int drop_contacts=0x7f070004;
-        public static final int key_add_postfix_to_message=0x7f07002c;
-        public static final int key_auto_reply_interval=0x7f07002a;
-        public static final int key_auto_reply_message=0x7f070029;
-        public static final int key_is_first_time_lauch=0x7f07002b;
+        public static final int key_add_postfix_to_message=0x7f07002e;
+        public static final int key_auto_reply_interval=0x7f07002c;
+        public static final int key_auto_reply_message=0x7f07002b;
+        public static final int key_is_first_time_lauch=0x7f07002d;
         /**  preference keys 
          */
-        public static final int key_is_listening=0x7f070028;
+        public static final int key_is_listening=0x7f07002a;
         /**  Refresh button in Contacts List View 
  刷新按钮名称 
          */
         public static final int menu_refresh=0x7f07000b;
-        public static final int nagative=0x7f070025;
+        public static final int nagative=0x7f070027;
         /**  Displays when no message is in the to-reply list 
  当没有待回复信息的时候显示 
          */
         public static final int no_to_reply_content=0x7f07000c;
-        public static final int notification_content_template=0x7f07000e;
-        /**  used for contact search, no quite useful now
-    <string name="search_contact_title">Search Contacts</string>
-    <string name="search_contact_hint">"Type in the contact's name"</string>
-    
- Notification information 
+        public static final int notification_content_template=0x7f070010;
+        /**  Notification information 
  以后需要添加搜索信息的时候使用，目前暂时没用 
     <string name="search_contact_title">搜索联系人</string>
     <string name="search_contact_hint">请输入联系人的名称</string>
     
  Notification的相关信息 
          */
-        public static final int notification_title=0x7f07000d;
-        public static final int positive=0x7f070024;
-        public static final int pref_add_postfix_title=0x7f07001d;
-        public static final int pref_category_message_listening=0x7f070026;
-        public static final int pref_category_reply_settings=0x7f070027;
+        public static final int notification_title=0x7f07000f;
+        public static final int positive=0x7f070026;
+        public static final int pref_add_postfix_title=0x7f07001f;
+        public static final int pref_category_message_listening=0x7f070028;
+        public static final int pref_category_reply_settings=0x7f070029;
         /**  Preference information 
  设置信息 
          */
-        public static final int pref_listening_title=0x7f07001a;
+        public static final int pref_listening_title=0x7f07001c;
         public static final int progress_load_contact_message=0x7f07000a;
         /**  ProgressDialog 
  ProgressDialog的提示内容信息 
          */
         public static final int progress_load_contact_title=0x7f070009;
-        public static final int quick_tutorial_confirm=0x7f070012;
-        public static final int quick_tutorial_content=0x7f070013;
+        public static final int quick_tutorial_confirm=0x7f070014;
+        public static final int quick_tutorial_content=0x7f070015;
         /**  Quick Tutorial 
  第一次登录时提示用户 
          */
-        public static final int quick_tutorial_title=0x7f070011;
-        public static final int start_listening_notification_content=0x7f070010;
-        public static final int start_listening_notification_title=0x7f07000f;
-        public static final int start_listening_title=0x7f07001b;
-        public static final int stop_listening_title=0x7f07001c;
+        public static final int quick_tutorial_title=0x7f070013;
+        public static final int search_contact_hint=0x7f07000e;
+        public static final int search_contact_title=0x7f07000d;
+        public static final int start_listening_notification_content=0x7f070012;
+        public static final int start_listening_notification_title=0x7f070011;
+        public static final int start_listening_title=0x7f07001d;
+        public static final int stop_listening_title=0x7f07001e;
         /**  tab titles 
  各个标签的名称 
          */
         public static final int tab_contacts_title=0x7f070006;
         public static final int tab_settings_title=0x7f070008;
         public static final int tab_to_reply_title=0x7f070007;
-        public static final int time_interval=0x7f070020;
-        public static final int time_interval_hint=0x7f070022;
+        public static final int time_interval=0x7f070022;
+        public static final int time_interval_hint=0x7f070024;
         /**  the template for to-reply list item in the list view 
          */
-        public static final int to_reply_content_template=0x7f070014;
-        public static final int to_reply_delete_confirm=0x7f070030;
-        public static final int to_reply_delete_title=0x7f07002f;
-        public static final int to_reply_respond_time_title=0x7f07002e;
+        public static final int to_reply_content_template=0x7f070016;
+        public static final int to_reply_delete_confirm=0x7f070032;
+        public static final int to_reply_delete_title=0x7f070031;
+        public static final int to_reply_respond_time_title=0x7f070030;
         /**  To-reply list view 
  待回复信息列表 
          */
-        public static final int to_reply_target_address_title=0x7f07002d;
+        public static final int to_reply_target_address_title=0x7f07002f;
     }
     public static final class xml {
         public static final int config_preferences=0x7f050000;
+        public static final int searchable=0x7f050001;
     }
 }

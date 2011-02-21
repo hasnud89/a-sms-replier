@@ -5,6 +5,7 @@ import java.util.List;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -14,6 +15,7 @@ import android.widget.ListView;
 import cn.edu.hit.voidmain.asmsreplier.R;
 import cn.edu.hit.voidmain.asmsreplier.activities.lists.adapter.ContactListAdapter;
 import cn.edu.hit.voidmain.asmsreplier.activities.lists.data.ContactData;
+import cn.edu.hit.voidmain.asmsreplier.contacts.ContactsManager;
 import cn.edu.hit.voidmain.asmsreplier.pd_factory.PDFactory;
 import cn.edu.hit.voidmain.asmsreplier.pd_factory.threads.LoadContactThread;
 import cn.edu.hit.voidmain.asmsreplier.pd_factory.threads.RefreshContactThread;
@@ -36,6 +38,11 @@ public class ContactsActivity extends Activity {
 	private static List<ContactData>contactInfoData;
 	private ContactListAdapter contactDataAdapter;
 	
+	private static boolean dirtyBit;
+	private static String dirtyId;
+	private static String dirtyName;
+	private static String dirtyNumber;
+	
 	// pops up a progress dialog
 	private ProgressDialog progressDialog;
 	
@@ -43,17 +50,54 @@ public class ContactsActivity extends Activity {
 	static 
 	{
 		contactInfoData = new ArrayList<ContactData>();
+		dirtyBit = false;
+	}
+	
+	private void checkContact(String id, String contactName, String contactNumber)
+	{
+		// here's the strategy
+		// i'll make change to the database ONLY
+		// and i'll set the dirty bit
+		// finally, i'll finish this activity, which results in calling the onResume of the former activity
+		// which will refresh the list view
+		// check it in the content provider
+		ContactsManager manager = new ContactsManager(this);
+		manager.checkContact(id, contactName, contactNumber);
+		
+		// set the dirty bit and dirty contact information
+		dirtyBit = true;
+		dirtyId = id;
+		dirtyName = contactName;
+		dirtyNumber = contactNumber;
+		
+		this.finish();
 	}
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.contacts);
 		
-		contactListView = (ListView)findViewById(R.id.listview_contacts);
+		final Intent queryIntent = getIntent();
+		final String queryAction = queryIntent.getAction();
 		
-		// loads the contact information
-		updateDataRoutine(new LoadContactThread(this, contactInfoData));
+		if("cn.edu.hit.voidmain.asmsreplier.action.RECHECK_CONTACT".equals(queryAction))
+		{
+			String extraData = queryIntent.getDataString();
+			String[] data = extraData.split("\0");
+			if(data.length == 3)
+			{
+				checkContact(data[0], data[1], data[2]);
+			}
+		}
+		else
+		{
+			setContentView(R.layout.contacts);
+			
+			contactListView = (ListView)findViewById(R.id.listview_contacts);
+			
+			// loads the contact information
+			updateDataRoutine(new LoadContactThread(this, contactInfoData));
+		}
 	}
 	
 	private Handler handler = new Handler()
@@ -76,13 +120,24 @@ public class ContactsActivity extends Activity {
 	@Override
 	protected void onResume() {
 		super.onResume();
-		/*
-		 * this is a bad idea, i need to add a "refresh" button here.
-		 * only update the information when user wants to do that
-		 * */
-		//updateListViewData();
-		//contactDatasAdapter = new ContactListAdapter(this, contactInfoDatas);
-		//contactList.setAdapter(contactDatasAdapter);
+		
+		
+		if(dirtyBit)
+		{
+			for(ContactData data : contactInfoData)
+			{
+				if(data.getContactInfo().getContactID() == Integer.valueOf(dirtyId)
+						&& data.getContactInfo().getContactName().equals(dirtyName)
+						&& data.getContactInfo().getNumber().equals(dirtyNumber))
+				{
+					data.getContactInfo().setChecked(true);
+				}
+			}
+			contactDataAdapter = new ContactListAdapter(ContactsActivity.this, contactInfoData);
+			contactListView.setAdapter(contactDataAdapter);
+			
+			dirtyBit = false;
+		}
 	}
 	
 	// Add options menu support
@@ -118,5 +173,23 @@ public class ContactsActivity extends Activity {
 				R.drawable.contacts, 
 				thread);
 		progressDialog.show();
+	}
+	
+	@Override
+	protected void onNewIntent(Intent intent) {
+		super.onNewIntent(intent);
+		
+		final Intent queryIntent = getIntent();
+		final String queryAction = queryIntent.getAction();
+		
+		if("cn.edu.hit.voidmain.asmsreplier.action.RECHECK_CONTACT".equals(queryAction))
+		{
+			String extraData = queryIntent.getDataString();
+			String[] data = extraData.split("\0");
+			if(data.length == 3)
+			{
+				checkContact(data[0], data[1], data[2]);
+			}
+		}
 	}
 }

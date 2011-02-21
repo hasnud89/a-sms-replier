@@ -38,6 +38,8 @@ public class IncomingSMSReceiver extends BroadcastReceiver {
 						String originAddress = message.getOriginatingAddress();
 						// leave out the +86 prefix
 						originAddress = PhoneNumberUtil.leaveOutPrefix(originAddress);
+						originAddress = PhoneNumberUtil.removeDashes(originAddress);
+						
 						listManager.addNewReply(context, originAddress);
 						// inform the view to change itself
 						listManager.replyChanged();

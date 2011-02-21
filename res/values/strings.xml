@@ -17,11 +17,9 @@
     <!-- Displays when no message is in the to-reply list -->
     <string name="no_to_reply_content">No auto-reply message in the queue!</string>
     
-    <!-- used for contact search, no quite useful now
     <string name="search_contact_title">Search Contacts</string>
-    <string name="search_contact_hint">"Type in the contact's name"</string>
-    -->
-    
+    <string name="search_contact_hint">"Search by name or number"</string>
+   
     <!-- Notification information -->
     <string name="notification_title">Auto Reply Message Sent</string>
     <string name="notification_content_template">"Sent to %1$s at %2$s"</string>

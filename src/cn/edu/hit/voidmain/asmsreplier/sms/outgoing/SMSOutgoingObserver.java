@@ -45,6 +45,7 @@ public class SMSOutgoingObserver extends ContentObserver {
 				// remove the + prefix
 				String number = cursor.getString(numberIdx);
 				number = PhoneNumberUtil.leaveOutPrefix(number);
+				number = PhoneNumberUtil.removeDashes(number);
 				manager.replyProcessed(number);
 			}
 		}
